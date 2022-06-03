@@ -9,7 +9,7 @@
  3. Import the project as a plugin project on target version
  4. Clean and build to compile
 
-### Want to use it in another site that is nopCommerce pewered?
+### Want to use it in another site that is not nopCommerce powered?
 The plugin is not directly compatible with any website. Make sure to review the website compatibilty
 
 ## If this project help you reduce time to develop, you can buy me a cup of coffee :)  
