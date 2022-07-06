@@ -1,0 +1,92 @@
+﻿@model Nop.Plugin.Payments.LipanaMpesa.CustomHelpers.MerchantModel
+@inject Nop.Core.IWebHelper webHelper
+@{
+    Layout = "_ConfigurePlugin";
+}
+
+@await Component.InvokeAsync("StoreScopeConfiguration")
+
+<form asp-controller="PaymentLipanaMpesa" asp-action="Configure" method="post">
+    <div class="panel-group">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                @Html.Raw(T("Plugins.Payments.LipanaMpesa.Instructions", $"{webHelper.GetStoreLocation()}Plugins/PaymentLipanaMpesa/PDTHandler"))
+                <div class="form-group">
+                    <div class="col-md-3">
+                        <nop-override-store-checkbox asp-for="UseSandbox_override" asp-input="UseSandbox" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                        <nop-label asp-for="UseSandbox" />
+                    </div>
+                    <div class="col-md-9">
+                        <nop-editor asp-for="UseSandbox" />
+                        <span asp-validation-for="UseSandbox"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-3">
+                        <nop-override-store-checkbox asp-for="PartyB_override" asp-input="PartyB" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                        <nop-label asp-for="PartyB" />
+                    </div>
+                    <div class="col-md-9">
+                        <nop-editor asp-for="PartyB" />
+                        <span asp-validation-for="PartyB"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-3">
+                        <nop-override-store-checkbox asp-for="Authorization_override" asp-input="Authorization" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                        <nop-label asp-for="Authorization" />
+                    </div>
+                    <div class="col-md-9">
+                        <nop-editor asp-for="Authorization" />
+                        <span asp-validation-for="Authorization"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-3">
+                        <nop-override-store-checkbox asp-for="PassKey_override" asp-input="PassKey" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                        <nop-label asp-for="PassKey" />
+                    </div>
+                    <div class="col-md-9">
+                        <nop-editor asp-for="PassKey" />
+                        <span asp-validation-for="PassKey"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-3">
+                        <nop-override-store-checkbox asp-for="CallBackURL_override" asp-input="CallBackURL" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                        <nop-label asp-for="CallBackURL" />
+                    </div>
+                    <div class="col-md-9">
+                        <nop-editor asp-for="CallBackURL" />
+                        <span asp-validation-for="CallBackURL"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-3">
+                        <nop-override-store-checkbox asp-for="AccountReference_override" asp-input="AccountReference" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                        <nop-label asp-for="AccountReference" />
+                    </div>
+                    <div class="col-md-9">
+                        <nop-editor asp-for="AccountReference" />
+                        <span asp-validation-for="AccountReference"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-3">
+                        <nop-override-store-checkbox asp-for="TransactionDesc_override" asp-input="TransactionDesc" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                        <nop-label asp-for="TransactionDesc" />
+                    </div>
+                    <div class="col-md-9">
+                        <nop-editor asp-for="TransactionDesc" max="13" />
+                        <span asp-validation-for="TransactionDesc"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-9 col-md-offset-3">
+                        <input type="submit" name="save" class="btn bg-primary" value="@T("Admin.Common.Save")" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,11 @@
+{
+  "Group": "Payments",
+  "FriendlyName": "Lipa Na M-Pesa",
+  "SystemName": "Payments.LipanaMpesa",
+  "Version": "1.0.0",
+  "SupportedVersions": [ "4.30" ],
+  "Author": "Robert Manegene",
+  "DisplayOrder": 1,
+  "FileName": "Nop.Plugin.Payments.LipanaMpesa.dll",
+  "Description": "This plugin enables customers to pay for goods and servie from M-pesa mobile money"
+}

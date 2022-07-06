@@ -1,0 +1,95 @@
+﻿@{
+    Layout = "";
+}
+@model Nop.Plugin.Payments.LipanaMpesa.Models.PaymentParams
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <div class="table-responsive bg-success text-white">
+
+        <table class="table table-sm mx-auto w-auto">
+            <tbody>
+
+                <tr>
+                    <td>
+                        <p><b>@T("Plugins.Payments.LipanaMpesa.Fields.PaymentInfo")</b></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="input-group ">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon3">Enter your Mpesa number</span>
+                            </div>
+                            <input asp-for="PartyA" value="" class="form-control" aria-describedby="basic-addon3">
+                            <span asp-validation-for="PartyA"></span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <hr />
+                        <!--
+                        Display paybill and account number for manual payment incase
+                        one chooses to pay manually/STK oush fails
+                    -->
+                        <b>@T("Plugins.Payments.LipanaMpesa.Fields.PayManual")</b>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>
+                        Select "Lipa na Mpesa" from your Safaricom MPesa Menu.
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>
+                        Select "Pay Bill"
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon3">Enter Busines no:</span>
+                            </div>
+                            <b><input asp-for="PartyB" class="form-control" aria-describedby="basic-addon3" readonly></b>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th scope="row">4</th>
+                    <td>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon3">Account no:</span>
+                            </div>
+                            <b><input asp-for="AccountReference" class="form-control" aria-describedby="basic-addon3" readonly></b>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">5</th>
+                    <td>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon3">Amount:</span>
+                            </div>
+                            <b><span class="form-control" aria-describedby="basic-addon3" readonly>Enter Order Total amount</span></b>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">6</th>
+                    <td>
+                        Enter Pin and confirm payment
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+
+</div>
+
