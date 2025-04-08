@@ -1,6 +1,4 @@
 # Nop.Plugin.Payments.LipanaMpesa
-##### This plugin is provided as is without warranty of any kind whatsoever! Please review the funtionality keenly before using.
-
  A nopCommerce plugin for M-Pesa checkout payment option. To use it on your nopCommerce site, simply add it as a plugin project, clean and build
  ### Directly suported nopCommerce version 
  1. 4.30
